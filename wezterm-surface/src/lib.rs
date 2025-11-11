@@ -1011,7 +1011,7 @@ mod test {
             y: Position::Absolute(1),
         });
         s.add_change(Change::ClearToEndOfLine(Default::default()));
-        assert_eq!(s.screen_chars_to_string(), "   \nw\nfoo\n");
+        assert_eq!(s.screen_chars_to_string(), "   \nw  \nfoo\n");
     }
 
     #[test]
@@ -1025,7 +1025,7 @@ mod test {
             y: Position::Absolute(1),
         });
         s.add_change(Change::ClearToEndOfScreen(Default::default()));
-        assert_eq!(s.screen_chars_to_string(), "hel\nw\n   \n");
+        assert_eq!(s.screen_chars_to_string(), "hel\nw  \n   \n");
 
         let (_seq, changes) = s.get_changes(0);
         assert_eq!(
