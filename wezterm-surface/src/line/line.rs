@@ -1006,7 +1006,6 @@ impl Line {
             // FIXME: we can skip the look-back for second and subsequent iterations
             self.set_cell_impl(x, cell.clone(), true, seqno);
         }
-        self.prune_trailing_blanks(seqno);
     }
 
     pub fn len(&self) -> usize {
